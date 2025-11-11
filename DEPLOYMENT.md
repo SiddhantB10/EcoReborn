@@ -1,6 +1,8 @@
 # 🚀 Deployment Guide for EcoReborn
 
-This guide covers deployment to **Render** and **Vercel**.
+This guide covers deployment to **Render** - the recommended platform for Flask applications.
+
+**Live App:** https://ecoreborn.onrender.com
 
 ---
 
@@ -14,9 +16,9 @@ Before deploying, ensure you have:
 
 ---
 
-## 🎨 Option 1: Deploy to Render
+## 🎨 Deploy to Render
 
-Render is recommended for Flask applications as it provides better support for Python web apps.
+Render provides excellent support for Python web applications with automatic deployments from GitHub.
 
 ### Step 1: Create Render Account
 
@@ -95,54 +97,7 @@ After first deployment:
 
 ---
 
-## 🔷 Option 2: Deploy to Vercel
-
-⚠️ **Note**: Vercel is optimized for serverless functions. Flask apps work better on Render, but Vercel is possible.
-
-### Step 1: Install Vercel CLI
-
-```bash
-npm install -g vercel
-```
-
-### Step 2: Login to Vercel
-
-```bash
-vercel login
-```
-
-### Step 3: Configure Environment Variables
-
-Create environment variables in Vercel dashboard or via CLI:
-
-```bash
-vercel env add SECRET_KEY
-vercel env add MONGODB_URI
-vercel env add MONGODB_DB_NAME
-vercel env add FLASK_ENV
-vercel env add APP_URL
-```
-
-Use the same values as listed in the Render section above.
-
-### Step 4: Deploy
-
-From your project directory:
-
-```bash
-vercel --prod
-```
-
-Or connect via Vercel Dashboard:
-1. Go to [Vercel Dashboard](https://vercel.com/dashboard)
-2. Click **"Add New Project"**
-3. Import from GitHub: `SiddhantB10/EcoReborn`
-4. Add environment variables
-5. Deploy
-
----
-
-## 🔒 Security Checklist
+##  Security Checklist
 
 Before going live, ensure:
 
@@ -162,8 +117,8 @@ Before going live, ensure:
 
 1. Go to MongoDB Atlas → Network Access
 2. Click **"Add IP Address"**
-3. For Render: Add `0.0.0.0/0` (allows all IPs) or specific Render IPs
-4. For Vercel: Add `0.0.0.0/0` (Vercel uses dynamic IPs)
+3. Add `0.0.0.0/0` (allows all IPs - needed for Render's dynamic IPs)
+4. Click **"Confirm"**
 
 ### Database User
 
@@ -189,13 +144,12 @@ After deployment, test these features:
 
 ## 📝 Deployment Files
 
-The following files support deployment:
+The following files support Render deployment:
 
-- `vercel.json` - Vercel configuration
-- `Procfile` - Render/Heroku process file
-- `runtime.txt` - Python version specification
-- `build.sh` - Render build script
-- `wsgi.py` - WSGI entry point
+- `render.yaml` - Render configuration (one-click deploy)
+- `Procfile` - Process definition file
+- `runtime.txt` - Python version specification (3.11.0)
+- `build.sh` - Build script for dependencies
 - `requirements.txt` - Python dependencies (includes gunicorn)
 
 ---
@@ -222,8 +176,8 @@ chmod +x build.sh
 
 **Issue**: CSS/images don't load
 **Solution**:
-- Render: Static files served automatically
-- Vercel: Check `vercel.json` routes configuration
+- Static files are served automatically by Render
+- Check that static files are in the `static/` directory
 
 ### Environment Variables Not Working
 
@@ -235,23 +189,24 @@ chmod +x build.sh
 
 ### Rate Limiting Issues
 
-**Issue**: Rate limiter errors on serverless
+**Issue**: Rate limiter errors
 **Solution**: Use `RATELIMIT_STORAGE_URL=memory://` for simple deployments
 
 ---
 
 ## 🔄 Continuous Deployment
 
-Both Render and Vercel support automatic deployments:
+Render supports automatic deployments:
 
-**Render:**
+**Automatic Deployment:**
 - Automatically deploys when you push to `main` branch
 - Check deployment logs in dashboard
+- Takes 1-3 minutes to complete
+- Zero downtime on paid plans
 
-**Vercel:**
-- Automatically deploys on git push
-- Preview deployments for pull requests
-- Production deployment for main branch
+**Manual Deployment:**
+- Can trigger manual deploy from Render dashboard
+- Useful for testing without pushing to GitHub
 
 ---
 
@@ -271,13 +226,12 @@ If you encounter issues:
 After successful deployment:
 
 1. ✅ Set up custom domain (optional)
-2. ✅ Configure SSL certificate (automatic on Render/Vercel)
+2. ✅ Configure SSL certificate (automatic on Render)
 3. ✅ Set up monitoring and alerts
 4. ✅ Configure backups for MongoDB
 5. ✅ Add analytics (optional)
+6. ✅ Set up email service (SMTP configuration)
 
 ---
 
-**Recommended**: Use **Render** for production deployment as it's better suited for Flask applications.
-
-Good luck with your deployment! 🚀
+**Your app is live at**: https://ecoreborn.onrender.com 🚀

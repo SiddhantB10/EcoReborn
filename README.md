@@ -227,7 +227,7 @@ To enable actual email sending:
 
 ## Deployment
 
-This project is **ready to deploy** to:
+This project is **deployed on Render** and ready for production!
 
 ### 🔗 Complete Integration Guide
 **NEW!** See [INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md) for:
@@ -236,24 +236,20 @@ This project is **ready to deploy** to:
 - Automated deployment workflow
 - Troubleshooting tips
 
-### ☁️ Recommended: Render
-One-click deployment with `render.yaml`:
-- See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step guide
-- Automatic builds on git push
+### ☁️ Render Deployment
+Automatic deployment configured:
+- See [DEPLOYMENT.md](DEPLOYMENT.md) for full guide
+- Automatic builds on git push to `main` branch
 - Free tier available
-
-### ⚡ Vercel
-Serverless deployment with `vercel.json`:
-- Deploy with Vercel CLI or GitHub integration
-- See [DEPLOYMENT.md](DEPLOYMENT.md) for configuration
+- One-click deployment with `render.yaml`
 
 ### 📦 Other Platforms
-Also supports:
+Also supports deployment to:
 - Heroku (with `Procfile`)
 - Railway
 - Any Linux VPS (Ubuntu + Gunicorn + Nginx)
 
-**All deployment files are included and ready to use!**
+**All deployment files are included!**
 
 ## Maintenance
 
