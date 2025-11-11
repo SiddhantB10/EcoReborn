@@ -229,6 +229,13 @@ To enable actual email sending:
 
 This project is **ready to deploy** to:
 
+### 🔗 Complete Integration Guide
+**NEW!** See [INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md) for:
+- How Git, Render, and MongoDB Atlas work together
+- Step-by-step connection setup
+- Automated deployment workflow
+- Troubleshooting tips
+
 ### ☁️ Recommended: Render
 One-click deployment with `render.yaml`:
 - See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step guide
