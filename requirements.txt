@@ -29,3 +29,6 @@ python-magic-bin==0.4.14; platform_system == "Windows"
 
 # Utilities
 itsdangerous==2.1.2
+
+# Production server
+gunicorn==21.2.0

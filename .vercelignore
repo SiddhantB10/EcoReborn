@@ -1,0 +1,19 @@
+# Don't upload these to Vercel
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+logs/
+uploads/
+.env
+.git/
+tests/
+*.md
+!README.md
+.gitignore
+setup.bat
+run.bat
+PUSH_NOW.bat

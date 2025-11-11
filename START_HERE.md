@@ -36,7 +36,7 @@ This will:
 
 1. **Get your MongoDB connection string** (you provided):
    ```
-   mongodb+srv://db_user:db_pass@ecoreborn.dkjdd4s.mongodb.net/
+   mongodb+srv://db_user:db_pass@ecoreborndb.yag1cpa.mongodb.net/
    ```
 
 2. **Edit `.env` file** and replace credentials:

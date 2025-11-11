@@ -225,11 +225,26 @@ To enable actual email sending:
 
 ## Deployment
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions for:
-- Render
-- Heroku
+This project is **ready to deploy** to:
+
+### ☁️ Recommended: Render
+One-click deployment with `render.yaml`:
+- See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step guide
+- Automatic builds on git push
+- Free tier available
+
+### ⚡ Vercel
+Serverless deployment with `vercel.json`:
+- Deploy with Vercel CLI or GitHub integration
+- See [DEPLOYMENT.md](DEPLOYMENT.md) for configuration
+
+### 📦 Other Platforms
+Also supports:
+- Heroku (with `Procfile`)
 - Railway
 - Any Linux VPS (Ubuntu + Gunicorn + Nginx)
+
+**All deployment files are included and ready to use!**
 
 ## Maintenance
 

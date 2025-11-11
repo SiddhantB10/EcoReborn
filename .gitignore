@@ -70,3 +70,6 @@ uploads/*
 # Temporary files
 *.tmp
 *.bak
+
+# Vercel
+.vercel
