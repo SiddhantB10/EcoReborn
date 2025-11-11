@@ -50,7 +50,7 @@ SECRET_KEY=<generate-a-secure-random-key>
 MONGODB_URI=mongodb+srv://db_user:db_pass@ecoreborndb.yag1cpa.mongodb.net/ecoreborn?retryWrites=true&w=majority
 MONGODB_DB_NAME=ecoreborn
 FLASK_ENV=production
-APP_URL=https://your-app-name.onrender.com
+APP_URL=https://ecoreborn.onrender.com
 
 # Session Configuration
 SESSION_COOKIE_SECURE=True
@@ -84,7 +84,7 @@ python -c "import secrets; print(secrets.token_hex(32))"
 1. Click **"Create Web Service"**
 2. Render will automatically deploy your application
 3. Wait for the build to complete (usually 2-5 minutes)
-4. Your app will be live at: `https://your-app-name.onrender.com`
+4. Your app will be live at: `https://ecoreborn.onrender.com`
 
 ### Step 5: Initialize Database
 
