@@ -4,6 +4,8 @@
 
 A fully server-side rendered sustainable fashion website built with Flask and MongoDB Atlas. Zero client-side JavaScript for maximum accessibility and performance.
 
+🌐 **Live Demo**: [https://ecoreborn.onrender.com](https://ecoreborn.onrender.com)
+
 ## Features
 
 - 🔐 Secure authentication (bcrypt password hashing, CSRF protection)
@@ -273,11 +275,15 @@ See [MAINTAINERS.md](MAINTAINERS.md) for:
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
+## Live Demo
+
+🌐 **Production Site**: [https://ecoreborn.onrender.com](https://ecoreborn.onrender.com)
+
 ## Support
 
 For issues or questions:
-- Email: admin@ecoreborn.example
-- GitHub Issues: (add your repository URL)
+- GitHub Issues: [https://github.com/SiddhantB10/EcoReborn/issues](https://github.com/SiddhantB10/EcoReborn/issues)
+- Repository: [https://github.com/SiddhantB10/EcoReborn](https://github.com/SiddhantB10/EcoReborn)
 
 ## Changelog
 

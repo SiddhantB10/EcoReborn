@@ -84,7 +84,7 @@ python -c "import secrets; print(secrets.token_hex(32))"
 1. Click **"Create Web Service"**
 2. Render will automatically deploy your application
 3. Wait for the build to complete (usually 2-5 minutes)
-4. Your app will be live at: `https://ecoreborn.onrender.com`
+4. Your app will be live at: **https://ecoreborn.onrender.com**
 
 ### Step 5: Initialize Database
 

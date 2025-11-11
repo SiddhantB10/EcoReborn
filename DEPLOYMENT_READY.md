@@ -72,8 +72,10 @@ SECRET_KEY=<generate-64-char-random-string>
 MONGODB_URI=mongodb+srv://db_user:db_pass@ecoreborndb.yag1cpa.mongodb.net/ecoreborn?retryWrites=true&w=majority
 MONGODB_DB_NAME=ecoreborn
 FLASK_ENV=production
-APP_URL=<your-deployment-url>
+APP_URL=https://ecoreborn.onrender.com
 ```
+
+**Live Production URL:** https://ecoreborn.onrender.com
 
 ### Optional:
 ```bash
