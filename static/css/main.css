@@ -1614,35 +1614,619 @@ th::after {
     margin-bottom: var(--spacing-xs);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* ============================================
+   RESPONSIVE DESIGN FOR ALL DEVICES
+   Mobile, Tablet, Laptop, Desktop, TV
+   ============================================ */
+
+/* Small Mobile Devices (320px - 480px) */
+@media (max-width: 480px) {
+    :root {
+        --spacing-xs: 0.375rem;
+        --spacing-sm: 0.75rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+        --spacing-2xl: 2.5rem;
+    }
+    
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .site-header {
+        padding: 0.75rem 0;
+    }
+    
+    .logo {
+        font-size: 1.25rem;
+    }
+    
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+    }
+    
     .header-content {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: 0.75rem;
     }
     
     .main-nav {
         width: 100%;
-        margin-top: var(--spacing-sm);
     }
     
     .main-nav ul {
         flex-direction: column;
-        gap: var(--spacing-xs);
+        gap: 0.5rem;
     }
     
     .main-nav a {
         display: block;
-        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+    }
+    
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
     }
     
     .hero-cta {
         flex-direction: column;
+        width: 100%;
     }
     
     .hero-cta .btn-primary,
     .hero-cta .btn-secondary {
         width: 100%;
+        padding: 0.875rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 1rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .requests-table {
+        font-size: 0.85rem;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    th, td {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .cta-buttons,
+    .error-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .cta-buttons .btn-primary,
+    .cta-buttons .btn-secondary,
+    .error-actions .btn-primary,
+    .error-actions .btn-secondary {
+        width: 100%;
+    }
+}
+
+/* Mobile Devices (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    :root {
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 0.875rem;
+        --spacing-md: 1.25rem;
+        --spacing-lg: 1.75rem;
+        --spacing-xl: 2.25rem;
+        --spacing-2xl: 3rem;
+    }
+    
+    html {
+        font-size: 15px;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .main-nav {
+        width: 100%;
+        margin-top: 0.75rem;
+    }
+    
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .main-nav a {
+        padding: 0.625rem 1rem;
+    }
+    
+    .hero {
+        padding: 2.5rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-cta {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+    
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets Portrait (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    html {
+        font-size: 15.5px;
+    }
+    
+    .container {
+        max-width: 720px;
+        padding: 0 1.5rem;
+    }
+    
+    .site-header {
+        padding: 1rem 0;
+    }
+    
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .main-nav ul {
+        flex-direction: row;
+        gap: 0.75rem;
+    }
+    
+    .main-nav a {
+        padding: 0.625rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets Landscape & Small Laptops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    html {
+        font-size: 16px;
+    }
+    
+    .container {
+        max-width: 960px;
+        padding: 0 1.75rem;
+    }
+    
+    .site-header {
+        padding: 1.25rem 0;
+    }
+    
+    .main-nav a {
+        padding: 0.75rem 1.25rem;
+    }
+    
+    .hero {
+        padding: 3.5rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.75rem;
+    }
+    
+    .process-steps {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Desktop & Laptops (1200px - 1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+    html {
+        font-size: 16px;
+    }
+    
+    .container {
+        max-width: 1200px;
+        padding: 0 2rem;
+    }
+    
+    .site-header {
+        padding: 1.5rem 0;
+    }
+    
+    .main-nav a {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .hero {
+        padding: 4rem 0;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+    
+    .process-steps {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .service-card {
+        padding: 2rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+}
+
+/* Large Desktop & TV (1600px+) */
+@media (min-width: 1600px) {
+    html {
+        font-size: 18px;
+    }
+    
+    .container {
+        max-width: 1400px;
+        padding: 0 2.5rem;
+    }
+    
+    .site-header {
+        padding: 2rem 0;
+    }
+    
+    .main-nav a {
+        padding: 0.875rem 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .hero {
+        padding: 5rem 0;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+        letter-spacing: -0.02em;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.75rem;
+    }
+    
+    .hero-description {
+        font-size: 1.25rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .benefit-card {
+        padding: 2.5rem;
+    }
+    
+    .process-steps {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+    
+    .process-step {
+        padding: 2rem;
+    }
+    
+    .service-card {
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+    
+    .contact-form-container,
+    .contact-info-card {
+        padding: 2.5rem;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .dashboard-card {
+        padding: 2.5rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4rem;
+    }
+    
+    .auth-card {
+        max-width: 600px;
+        padding: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.75rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.25rem;
+    }
+}
+
+/* Ultra Wide & TV Displays (1920px+) */
+@media (min-width: 1920px) {
+    html {
+        font-size: 20px;
+    }
+    
+    .container {
+        max-width: 1600px;
+        padding: 0 3rem;
+    }
+    
+    .hero {
+        padding: 6rem 0;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .benefits-grid,
+    .process-steps {
+        gap: 3rem;
+    }
+    
+    .benefit-card,
+    .process-step,
+    .service-card,
+    .contact-form-container,
+    .contact-info-card,
+    .dashboard-card {
+        padding: 3rem;
+    }
+    
+    .footer-grid {
+        gap: 5rem;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets for mobile */
+    .btn-primary,
+    .btn-secondary,
+    .main-nav a,
+    .form-control,
+    summary {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .benefit-card:hover,
+    .service-card:hover,
+    .process-step:hover,
+    .dashboard-card:hover {
+        transform: none;
+    }
+    
+    /* Increase tap areas */
+    .social-links a {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* Landscape Orientation - Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle,
+    .hero-description {
+        font-size: 0.95rem;
+    }
+    
+    .site-header {
+        padding: 0.75rem 0;
+    }
+    
+    .benefits-section,
+    .process-section,
+    .cta-section {
+        padding: 2rem 0;
+    }
+}
+
+/* Print Media Optimizations */
+@media print {
+    .site-header,
+    .site-footer,
+    .flash-messages,
+    .cta-section,
+    .hero-cta,
+    .btn-primary,
+    .btn-secondary {
+        display: none !important;
+    }
+    
+    body {
+        background-color: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+    
+    .service-card,
+    .benefit-card,
+    .process-step,
+    .dashboard-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
     }
 }
 
