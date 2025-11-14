@@ -1,6 +1,6 @@
-# Ecoreborn Website
+# EcoReborn Website
 
-**Ecoreborn — Reborn fabrics. Reborn future.**
+**EcoReborn — Reborn fabrics. Reborn future.**
 
 A fully server-side rendered sustainable fashion website built with Flask and MongoDB Atlas. Zero client-side JavaScript for maximum accessibility and performance.
 
@@ -294,4 +294,4 @@ See [CHANGELOG.md](CHANGELOG.md) for version history.
 
 ---
 
-**Made with ♻️ by Ecoreborn Team**
+**Made with ♻️ by EcoReborn Team**

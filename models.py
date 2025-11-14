@@ -1,5 +1,5 @@
 """
-Database models for Ecoreborn application.
+Database models for EcoReborn application.
 Uses MongoDB with PyMongo for data persistence.
 """
 

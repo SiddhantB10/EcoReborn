@@ -87,7 +87,7 @@ Request ID: {request_id}
             'id': 'custom-fabric',
             'name': 'Custom Re-spun Fabric Orders',
             'description': 'Order custom re-spun fabrics made from recycled materials. Choose your specifications, colors, and quantities.',
-            'pricing': 'Starting from ₹800/meter. Minimum order: 100 meters.'
+            'pricing': 'Starting from ₹250/meter. Minimum order: 50 meters.'
         },
         {
             'id': 'b2b-partnerships',
@@ -99,7 +99,7 @@ Request ID: {request_id}
             'id': 'consulting',
             'name': 'Consulting for Textile Brands',
             'description': 'Expert consulting on sustainable textile practices, circular economy implementation, and waste reduction strategies.',
-            'pricing': '₹15,000/day or custom project rates.'
+            'pricing': '₹5,000/day or custom project rates.'
         },
         {
             'id': 'collection-drives',

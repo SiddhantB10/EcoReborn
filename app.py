@@ -1,5 +1,5 @@
 """
-Ecoreborn Flask Application
+EcoReborn Flask Application
 A sustainable fashion website with server-side rendering (zero JavaScript).
 """
 
@@ -160,5 +160,5 @@ if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
     debug = os.getenv('FLASK_ENV') == 'development'
     
-    app.logger.info(f'Starting Ecoreborn application on port {port}')
+    app.logger.info(f'Starting EcoReborn application on port {port}')
     app.run(host='0.0.0.0', port=port, debug=debug)

@@ -28,7 +28,7 @@ class TestPublicRoutes:
         """Test home page loads successfully."""
         response = client.get('/')
         assert response.status_code == 200
-        assert b'Ecoreborn' in response.data
+        assert b'EcoReborn' in response.data
         assert b'Reborn fabrics' in response.data
     
     def test_services_page(self, client):
