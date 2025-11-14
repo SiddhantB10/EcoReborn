@@ -4,7 +4,8 @@
 
 A fully server-side rendered sustainable fashion website built with Flask and MongoDB Atlas. Zero client-side JavaScript for maximum accessibility and performance.
 
-🌐 **Live Demo**: [https://ecoreborn.onrender.com](https://ecoreborn.onrender.com)
+🌐 **Live Demo**: Ready for deployment on Vercel
+📦 **Deployment**: Vercel (serverless)
 
 ## Features
 
@@ -227,29 +228,31 @@ To enable actual email sending:
 
 ## Deployment
 
-This project is **deployed on Render** and ready for production!
+This project is **ready for Vercel deployment**!
 
-### 🔗 Complete Integration Guide
-**NEW!** See [INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md) for:
-- How Git, Render, and MongoDB Atlas work together
-- Step-by-step connection setup
-- Automated deployment workflow
-- Troubleshooting tips
+### ☁️ Vercel Deployment (Recommended)
+**NEW!** Fully configured for Vercel serverless deployment:
+- ✅ See [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md) for complete guide
+- ✅ See [VERCEL_CHECKLIST.md](VERCEL_CHECKLIST.md) for step-by-step checklist
+- ✅ Run `python verify_vercel.py` to verify configuration
+- ✅ Automatic deployments on git push to `main` branch
+- ✅ Free tier with 100GB bandwidth/month
+- ✅ Automatic HTTPS and global CDN
+- ✅ Zero cold start optimization
 
-### ☁️ Render Deployment
-Automatic deployment configured:
-- See [DEPLOYMENT.md](DEPLOYMENT.md) for full guide
-- Automatic builds on git push to `main` branch
-- Free tier available
-- One-click deployment with `render.yaml`
+### 📦 Deployment Files Included:
+- `vercel.json` - Vercel configuration
+- `api/index.py` - Serverless entry point
+- `.vercelignore` - Deployment exclusions
+- `requirements.txt` - Python dependencies
 
-### 📦 Other Platforms
-Also supports deployment to:
-- Heroku (with `Procfile`)
-- Railway
-- Any Linux VPS (Ubuntu + Gunicorn + Nginx)
+### 🚀 Quick Deploy:
+1. Push code to GitHub
+2. Import repository in Vercel dashboard
+3. Configure environment variables
+4. Deploy!
 
-**All deployment files are included!**
+**All deployment files are included and verified!**
 
 ## Maintenance
 
@@ -280,7 +283,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Live Demo
 
-🌐 **Production Site**: [https://ecoreborn.onrender.com](https://ecoreborn.onrender.com)
+🌐 **Ready for Deployment**: Deploy to Vercel in minutes!
+📖 **Deploy Guide**: See [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md)
 
 ## Support
 

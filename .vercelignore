@@ -1,0 +1,56 @@
+# Vercel ignore file - exclude unnecessary files from deployment
+
+# Render-specific files (no longer needed)
+render.yaml
+Procfile
+build.sh
+
+# Development files
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+
+# Uploads (store these in cloud storage for production)
+uploads/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Git
+.git/
+.gitignore
+
+# Environment
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation (optional - remove if you want docs deployed)
+*.md
+!README.md
+
+# Batch files
+*.bat
