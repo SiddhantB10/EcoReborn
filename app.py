@@ -61,18 +61,26 @@ def create_app():
     # Application URL
     app.config['APP_URL'] = os.getenv('APP_URL', 'http://localhost:5000')
     
-    # Logging
-    log_dir = os.path.join(app.root_path, 'logs')
-    os.makedirs(log_dir, exist_ok=True)
-    
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        handlers=[
-            logging.FileHandler(os.path.join(log_dir, 'app.log')),
-            logging.StreamHandler()
-        ]
-    )
+    # Logging (Vercel-compatible: only use StreamHandler in production)
+    if os.getenv('FLASK_ENV') == 'production':
+        # In production (Vercel), only log to console (read-only filesystem)
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+            handlers=[logging.StreamHandler()]
+        )
+    else:
+        # In development, log to both file and console
+        log_dir = os.path.join(app.root_path, 'logs')
+        os.makedirs(log_dir, exist_ok=True)
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler(os.path.join(log_dir, 'app.log')),
+                logging.StreamHandler()
+            ]
+        )
     
     # Initialize MongoDB
     try:

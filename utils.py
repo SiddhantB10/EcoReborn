@@ -67,29 +67,35 @@ def send_email(to_email, subject, body, html_body=None):
 
 
 def log_email_to_file(to_email, subject, body, html_body=None):
-    """Log email to file for development/testing."""
+    """Log email to file for development/testing (or console in production)."""
     from flask import current_app
-    
-    log_dir = os.path.join(current_app.root_path, 'logs')
-    os.makedirs(log_dir, exist_ok=True)
-    
-    log_file = os.path.join(log_dir, 'email.log')
     
     timestamp = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
     
-    with open(log_file, 'a', encoding='utf-8') as f:
-        f.write(f'\n{"="*80}\n')
-        f.write(f'Timestamp: {timestamp}\n')
-        f.write(f'To: {to_email}\n')
-        f.write(f'Subject: {subject}\n')
-        f.write(f'{"-"*80}\n')
-        f.write(f'{body}\n')
-        if html_body:
+    # In production (Vercel), log to console only (read-only filesystem)
+    if os.getenv('FLASK_ENV') == 'production':
+        current_app.logger.info(f'Email would be sent to: {to_email}')
+        current_app.logger.info(f'Subject: {subject}')
+        current_app.logger.info(f'Body: {body[:100]}...')  # Log first 100 chars
+    else:
+        # In development, log to file
+        log_dir = os.path.join(current_app.root_path, 'logs')
+        os.makedirs(log_dir, exist_ok=True)
+        log_file = os.path.join(log_dir, 'email.log')
+        
+        with open(log_file, 'a', encoding='utf-8') as f:
+            f.write(f'\n{"="*80}\n')
+            f.write(f'Timestamp: {timestamp}\n')
+            f.write(f'To: {to_email}\n')
+            f.write(f'Subject: {subject}\n')
             f.write(f'{"-"*80}\n')
-            f.write(f'HTML Version:\n{html_body}\n')
-        f.write(f'{"="*80}\n\n')
-    
-    current_app.logger.info(f'Email logged to file: {to_email} - {subject}')
+            f.write(f'{body}\n')
+            if html_body:
+                f.write(f'{"-"*80}\n')
+                f.write(f'HTML Version:\n{html_body}\n')
+            f.write(f'{"="*80}\n\n')
+        
+        current_app.logger.info(f'Email logged to file: {to_email} - {subject}')
 
 
 def generate_reset_token():
@@ -118,6 +124,8 @@ def allowed_file(filename, allowed_extensions=None):
 def save_uploaded_file(file_storage, upload_folder):
     """
     Save uploaded file securely.
+    In production (Vercel), files can't be saved to disk (read-only filesystem).
+    File uploads are disabled in production - use cloud storage instead.
     
     Args:
         file_storage: FileStorage object from request.files
@@ -132,6 +140,15 @@ def save_uploaded_file(file_storage, upload_folder):
     if not allowed_file(file_storage.filename):
         return None
     
+    # In production (Vercel), skip file saving (read-only filesystem)
+    # You would need to integrate with cloud storage (AWS S3, Cloudinary, etc.)
+    if os.getenv('FLASK_ENV') == 'production':
+        from flask import current_app
+        current_app.logger.warning('File upload attempted in production - files not saved (use cloud storage)')
+        # Return a dummy filename so the form doesn't break
+        return secure_filename(file_storage.filename)
+    
+    # In development, save files locally
     # Secure the filename
     filename = secure_filename(file_storage.filename)
     
